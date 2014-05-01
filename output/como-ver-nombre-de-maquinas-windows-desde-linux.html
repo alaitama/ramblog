@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+          <title>RAMBORG's BLOG</title>
+        <meta charset="utf-8" />
+        
+
+		<link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="./theme/css/custom.css" type="text/css"/>
+        
+
+
+
+    <meta name="tags" contents="Trick" />
+
+</head>
+
+<body id="index" class="home">
+	
+		<div class="container">
+		  <div class="header">
+			<ul class="nav nav-pills pull-right">
+			  <!--
+			  <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#">About</a></li>
+			  <li><a href="#">Contact</a></li>
+			  -->
+                         <li><a href="./pages/about.html">
+                             Acerca de mi
+                          </a></li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                        <li >
+                            <a href="./category/applications.html">Applications</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-gnulinux.html">Applications, gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-programming.html">Applications, programming</a>
+                        </li>
+                        <li class="active">
+                            <a href="./category/gnulinux.html">Gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="./category/other.html">Other</a>
+                        </li>
+                        <li >
+                            <a href="./category/programming.html">Programming</a>
+                        </li>
+                        <li >
+                            <a href="./category/systems.html">Systems</a>
+                        </li>
+                        <li >
+                            <a href="./category/tips.html">Tips</a>
+                        </li>
+                        <li >
+                            <a href="./category/writing.html">Writing</a>
+                        </li>
+                </ul>
+              </li>
+              
+              <li><a href="./tags.html"><i class="fa fa-th-list"></i><span class="icon-label">Tags</span></a></li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              
+			</ul>
+			<h3 class="text-muted"><a href="./">RAMBORG's BLOG <strong></strong></a></h3>
+		  </div>
+			
+			
+			
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="./como-ver-nombre-de-maquinas-windows-desde-linux.html" rel="bookmark"
+         title="Permalink to Como ver nombre de máquinas Windows desde Linux">Como ver nombre de máquinas Windows desde Linux</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+	  <!--
+    <abbr class="published" title="2012-06-20T15:18:00">
+      mié 20 junio 2012
+    </abbr>
+    -->
+    <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-06-20T15:18:00"> mié 20 junio 2012</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="./author/ramborg.html"><i class="fa fa-user"></i> ramborg</a>
+
+
+
+<span class="label label-default side-tag">Tags</span>
+	<a href="./tag/trick.html">Trick</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Desde Windows resulta muy facil ver que máquina hay conectadas. Pero
+desde Linux hay que saber como, porque no viene por defecto.</p>
+<p>Explicaré dos formas, esto es solo para poder ver las máquinas Windows,
+los nombres y conectarnos a sus recursos compartidos, no para compartir
+recursos nosotros.</p>
+<p><strong>1er Método</strong>(extraido de <a href="https://wiki.archlinux.org/index.php/Samba">https://wiki.archlinux.org/index.php/Samba</a>,
+sección Discovering network shares)<strong><br />
+</strong></p>
+<ul>
+<li>Descargar smbclient y nmap</li>
+<li>Ejecutar nmap para ver las maquinas con recursos compartidos, en
+    este paso pueden ir al zenmap, que es el front-end de nmap.</li>
+</ul>
+<blockquote>
+<p>nmap -p 139 -sT 192.168.1.*</p>
+</blockquote>
+<p>Veremos algo como:</p>
+<blockquote>
+<div class="highlight"><pre><span class="n">Starting</span> <span class="n">nmap</span> <span class="mf">3.78</span> <span class="p">(</span> <span class="n">http</span><span class="o">:</span><span class="c1">//www.insecure.org/nmap/ ) at 2005-02-15 11:45 PHT</span>
+<span class="n">Interesting</span> <span class="n">ports</span> <span class="n">on</span> <span class="mf">192.168.1.1</span><span class="o">:</span>
+<span class="p">(</span><span class="n">The</span> <span class="mi">1661</span> <span class="n">ports</span> <span class="n">scanned</span> <span class="n">but</span> <span class="n">not</span> <span class="n">shown</span> <span class="n">below</span> <span class="n">are</span> <span class="n">in</span> <span class="n">state</span><span class="o">:</span> <span class="n">closed</span><span class="p">)</span>
+<span class="n">PORT</span>     <span class="n">STATE</span> <span class="n">SERVICE</span>
+<span class="mi">139</span><span class="o">/</span><span class="n">tcp</span> <span class="n">open</span> <span class="n">netbios</span><span class="o">-</span><span class="n">ssn</span>
+<span class="mi">5000</span><span class="o">/</span><span class="n">tcp</span> <span class="n">open</span>  <span class="n">UPnP</span>
+
+<span class="n">Interesting</span> <span class="n">ports</span> <span class="n">on</span> <span class="mf">192.168.1.5</span><span class="o">:</span>
+<span class="p">(</span><span class="n">The</span> <span class="mi">1662</span> <span class="n">ports</span> <span class="n">scanned</span> <span class="n">but</span> <span class="n">not</span> <span class="n">shown</span> <span class="n">below</span> <span class="n">are</span> <span class="n">in</span> <span class="n">state</span><span class="o">:</span> <span class="n">closed</span><span class="p">)</span>
+<span class="n">PORT</span>     <span class="n">STATE</span> <span class="n">SERVICE</span>
+<span class="mi">6000</span><span class="o">/</span><span class="n">tcp</span> <span class="n">open</span>  <span class="n">X11</span>
+
+<span class="n">Nmap</span> <span class="n">run</span> <span class="n">completed</span> <span class="o">--</span> <span class="mi">256</span> <span class="n">IP</span> <span class="n">addresses</span> <span class="p">(</span><span class="mi">2</span> <span class="n">hosts</span> <span class="n">up</span><span class="p">)</span> <span class="n">scanned</span> <span class="n">in</span> <span class="mf">7.255</span> <span class="n">seconds</span>
+</pre></div>
+
+
+</blockquote>
+<ul>
+<li>Ahora vemos todas las máquinas con el servicio en el puerto 139 y
+    ejecutamos el siguiente comando para ver el nombre de NetBIOS.</li>
+</ul>
+<blockquote>
+<p>nmblookup -A 192.168.1.x</p>
+</blockquote>
+<ul>
+<li>Vermos el grupo de trabajo y el nombre de la máquina y los servicios
+    abiertos indicados con \&lt;20>, algo tal que así</li>
+</ul>
+<blockquote>
+<div class="highlight"><pre><span class="nx">Looking</span> <span class="nb">up</span> <span class="nb">status</span> <span class="nx">of</span> <span class="mf">192.168.1.1</span>
+        <span class="nx">PUTER</span>           <span class="o">&lt;</span><span class="mi">00</span><span class="o">&gt;</span> <span class="o">-</span>         <span class="nx">B</span> <span class="o">&lt;</span><span class="nx">ACTIVE</span><span class="o">&gt;</span>
+        <span class="nx">HOMENET</span>         <span class="o">&lt;</span><span class="mi">00</span><span class="o">&gt;</span> <span class="o">-</span> <span class="o">&lt;</span><span class="k">GROUP</span><span class="o">&gt;</span> <span class="nx">B</span> <span class="o">&lt;</span><span class="nx">ACTIVE</span><span class="o">&gt;</span>
+        <span class="nx">PUTER</span>           <span class="o">&lt;</span><span class="mi">03</span><span class="o">&gt;</span> <span class="o">-</span>         <span class="nx">B</span> <span class="o">&lt;</span><span class="nx">ACTIVE</span><span class="o">&gt;</span>
+        <span class="nx">PUTER</span> <span class="o">&lt;</span><span class="mi">20</span><span class="o">&gt;</span> <span class="o">-</span> <span class="nx">B</span> <span class="o">&lt;</span><span class="nx">ACTIVE</span><span class="o">&gt;</span>
+        <span class="nx">HOMENET</span>         <span class="o">&lt;</span><span class="mi">1</span><span class="nx">e</span><span class="o">&gt;</span> <span class="o">-</span> <span class="o">&lt;</span><span class="k">GROUP</span><span class="o">&gt;</span> <span class="nx">B</span> <span class="o">&lt;</span><span class="nx">ACTIVE</span><span class="o">&gt;</span>
+        <span class="nx">USERNAME</span>        <span class="o">&lt;</span><span class="mi">03</span><span class="o">&gt;</span> <span class="o">-</span>         <span class="nx">B</span> <span class="o">&lt;</span><span class="nx">ACTIVE</span><span class="o">&gt;</span>
+        <span class="nx">HOMENET</span>         <span class="o">&lt;</span><span class="mi">1</span><span class="nb">d</span><span class="o">&gt;</span> <span class="o">-</span>         <span class="nx">B</span> <span class="o">&lt;</span><span class="nx">ACTIVE</span><span class="o">&gt;</span>
+        <span class="nx">MSBROWSE</span>        <span class="o">&lt;</span><span class="mi">01</span><span class="o">&gt;</span> <span class="o">-</span> <span class="o">&lt;</span><span class="k">GROUP</span><span class="o">&gt;</span> <span class="nx">B</span> <span class="o">&lt;</span><span class="nx">ACTIVE</span><span class="o">&gt;</span>
+</pre></div>
+
+
+</blockquote>
+<ul>
+<li>Para conectarnos al recurso compartido nada mas tendriamos que
+    hacer:</li>
+</ul>
+<blockquote>
+<p>smbclient -L \\PUTER</p>
+</blockquote>
+<p><strong>2º Método, con Thunar</strong>(extraido
+de <a href="https://wiki.archlinux.org/index.php/Thunar">https://wiki.archlinux.org/index.php/Thunar</a>, sección Tips and
+Tricks)</p>
+<ul>
+<li>Descargar smbclient, gvfs y gvfs-smb</li>
+<li>Despues reiniciar XFCE y tendremos una nueva localización en Thunar
+    llamada Red donde vemos las máquinas Windows.</li>
+</ul>
+<p><strong>3er Método, con smbtree</strong></p>
+<ul>
+<li>Ejecutando</li>
+</ul>
+<blockquote>
+<p>smbtree</p>
+</blockquote>
+<p><strong>Nota: </strong>Esto es como los pimientos del padrón...unas veces funciona y
+otras non :/</p>
+  </div><!-- /.entry-content -->
+</section>
+			
+			
+			<hr>
+			<footer id="contentinfo" class="body footer">
+					<address id="about" class="vcard body">
+					Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+					which takes great advantage of <a href="http://python.org">Python</a>.
+					</address><!-- /#about -->
+			</footer><!-- /#contentinfo -->
+	</div>
+	
+	<script src="./theme/js/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="./theme/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

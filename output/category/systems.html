@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <title>RAMBORG's BLOG</title>
+        <meta charset="utf-8" />
+        
+
+		<link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="../theme/css/custom.css" type="text/css"/>
+        
+</head>
+
+<body id="index" class="home">
+	
+		<div class="container">
+		  <div class="header">
+			<ul class="nav nav-pills pull-right">
+			  <!--
+			  <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#">About</a></li>
+			  <li><a href="#">Contact</a></li>
+			  -->
+                         <li><a href="../pages/about.html">
+                             Acerca de mi
+                          </a></li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                        <li >
+                            <a href="../category/applications.html">Applications</a>
+                        </li>
+                        <li >
+                            <a href="../category/applications-gnulinux.html">Applications, gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="../category/applications-programming.html">Applications, programming</a>
+                        </li>
+                        <li >
+                            <a href="../category/gnulinux.html">Gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="../category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="../category/other.html">Other</a>
+                        </li>
+                        <li >
+                            <a href="../category/programming.html">Programming</a>
+                        </li>
+                        <li class="active">
+                            <a href="../category/systems.html">Systems</a>
+                        </li>
+                        <li >
+                            <a href="../category/tips.html">Tips</a>
+                        </li>
+                        <li >
+                            <a href="../category/writing.html">Writing</a>
+                        </li>
+                </ul>
+              </li>
+              
+              <li><a href="../tags.html"><i class="fa fa-th-list"></i><span class="icon-label">Tags</span></a></li>
+              <li><a href="../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              
+			</ul>
+			<h3 class="text-muted"><a href="../">RAMBORG's BLOG <strong></strong></a></h3>
+		  </div>
+			
+			
+			
+            <article>
+                <h2><a href="../network-maphost-discovery.html">Network map/Host Discovery</a></h2>
+                <div class="summary"><p>Network mapping for discover hosts and topology in a LAN. Is the
+previous step for tapping in the web or attack a host.</p>
+<p>There are many tools fot this. I remember two good tools in my times,
+<a href="http://www.amtsoft.com/iris/index.htm">Iris</a>, <a href="http://www.amtsoft.com/retina/index.htm">Retina,</a> not free and I don't know how are good now ...</p>
+                    <a class="btn btn-default btn-xs" href="../network-maphost-discovery.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../el-caso-ataques-a-wiki.html">El caso: ataques a Wiki</a></h2>
+                <div class="summary"><p>Comparto enlace al resumen del ataque de la Wiki de Python, aprovechando
+una vulneravilidad de MoinMoinWiki. Muy interesante como explican todo
+el suceso.</p>
+<p><a href="http://wiki.python.org/moin/WikiAttack2013">http://wiki.python.org/moin/WikiAttack2013</a></p>
+<p>Vulnerabilidad que ya fue aprovechada para crackear DebianWiki. Aqui el
+resumen e informe que hicieron.</p>
+<p><a href="http://wiki.debian.org/DebianWiki/SecurityIncident2012">http://wiki.debian.org/DebianWiki/SecurityIncident2012 ...</a></p>
+                    <a class="btn btn-default btn-xs" href="../el-caso-ataques-a-wiki.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../tutorial-arpspoofing-con-dsniff.html">Tutorial ARPSpoofing con Dsniff</a></h2>
+                <div class="summary"><p>Primero hacemos que nuestro pc redireccione el trafico, para que la
+victima no se quede sin internet</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s">&quot;echo 1 &gt; /proc/sys/net/ipv4/ip_forward&quot;</span>
+
+<span class="n">Y</span> <span class="n">luego</span> <span class="n">hacemos</span> <span class="n">el</span> <span class="n">arpSoofing</span>
+</pre></div>
+
+
+<p><em>#arpspoof -t [gateway IP] [Victim IP] &amp; >/dev/null</em></p>
+<p><em>#arpspoof -t [victim IP] [gateway IP] &amp; >/dev/nul</em>l</p>
+<p>Y ...</p>
+                    <a class="btn btn-default btn-xs" href="../tutorial-arpspoofing-con-dsniff.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../ataque-basico-wep.html">Ataque básico WEP</a></h2>
+                <div class="summary"><p>Aunque ya casi esta anticuado este tipo de ataque, siguen quedando Wifis
+con seguridad WEP. Los pasos para conseguir el password de este tipos de
+puntos de accesos son:</p>
+<div class="highlight"><pre><span class="cp">#Ponemos tarjeta en modo promiscuo</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">airmon</span><span class="o">-</span><span class="n">ng</span> <span class="n">start</span> <span class="n">wlan0</span>
+
+<span class="cp">#Cambiamos MAC de nuestra tarjeta </span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">ifconfig</span> <span class="n">mon0</span> <span class="n">down</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">macchanger ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="../ataque-basico-wep.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../linux-maxima-seguridad.html">Linux Máxima seguridad</a></h2>
+                <div class="summary"><p>[<img alt="" src="http://ramborg.16mb.com/ramborg/wp-content/uploads/2012/06/caja-linux-mc3a1xima-seguridadedicion-especial11.png" title="caja-linux-mc3a1xima-seguridadedicion-especial1" />][]Buenas a todos,</p>
+<p>Esta entrada la voy a dedicar al famoso libro Linux Máxima Seguridad de
+anónimo.</p>
+<p>Desde que cayó este libro en mis manos mis conocimientos en seguridad
+Linux han aumentado considerablemente. Explicando los temas de manera
+sencilla, pero incluyendo la base de todo lo que explica para
+comprenderlo ...</p>
+                    <a class="btn btn-default btn-xs" href="../linux-maxima-seguridad.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+			
+			
+			<hr>
+			<footer id="contentinfo" class="body footer">
+					<address id="about" class="vcard body">
+					Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+					which takes great advantage of <a href="http://python.org">Python</a>.
+					</address><!-- /#about -->
+			</footer><!-- /#contentinfo -->
+	</div>
+	
+	<script src="../theme/js/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../theme/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

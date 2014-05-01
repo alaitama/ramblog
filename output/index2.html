@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <title>RAMBORG's BLOG</title>
+        <meta charset="utf-8" />
+        
+
+		<link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="./theme/css/custom.css" type="text/css"/>
+        
+</head>
+
+<body id="index" class="home">
+	
+		<div class="container">
+		  <div class="header">
+			<ul class="nav nav-pills pull-right">
+			  <!--
+			  <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#">About</a></li>
+			  <li><a href="#">Contact</a></li>
+			  -->
+                         <li><a href="./pages/about.html">
+                             Acerca de mi
+                          </a></li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                        <li >
+                            <a href="./category/applications.html">Applications</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-gnulinux.html">Applications, gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-programming.html">Applications, programming</a>
+                        </li>
+                        <li >
+                            <a href="./category/gnulinux.html">Gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="./category/other.html">Other</a>
+                        </li>
+                        <li >
+                            <a href="./category/programming.html">Programming</a>
+                        </li>
+                        <li >
+                            <a href="./category/systems.html">Systems</a>
+                        </li>
+                        <li >
+                            <a href="./category/tips.html">Tips</a>
+                        </li>
+                        <li >
+                            <a href="./category/writing.html">Writing</a>
+                        </li>
+                </ul>
+              </li>
+              
+              <li><a href="./tags.html"><i class="fa fa-th-list"></i><span class="icon-label">Tags</span></a></li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              
+			</ul>
+			<h3 class="text-muted"><a href="./">RAMBORG's BLOG <strong></strong></a></h3>
+		  </div>
+			
+			
+			
+            <article>
+                <h2><a href="./el-caso-ataques-a-wiki.html">El caso: ataques a Wiki</a></h2>
+                <div class="summary"><p>Comparto enlace al resumen del ataque de la Wiki de Python, aprovechando
+una vulneravilidad de MoinMoinWiki. Muy interesante como explican todo
+el suceso.</p>
+<p><a href="http://wiki.python.org/moin/WikiAttack2013">http://wiki.python.org/moin/WikiAttack2013</a></p>
+<p>Vulnerabilidad que ya fue aprovechada para crackear DebianWiki. Aqui el
+resumen e informe que hicieron.</p>
+<p><a href="http://wiki.debian.org/DebianWiki/SecurityIncident2012">http://wiki.debian.org/DebianWiki/SecurityIncident2012 ...</a></p>
+                    <a class="btn btn-default btn-xs" href="./el-caso-ataques-a-wiki.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./carmina-burana-o-fortuna.html">Carmina Burana - O Fortuna</a></h2>
+                <div class="summary"><p>Aprendere inglés cantando</p>
+<p>http://www.youtube.com/watch?v=nIwrgAnx6Q8</p>
+                    <a class="btn btn-default btn-xs" href="./carmina-burana-o-fortuna.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./decompiladores-java.html">Decompiladores JAVA</a></h2>
+                <div class="summary"><p>Enlace original de dos decompiladores Java gratuitos(para Windows):</p>
+<p>Cavaj: <a href="http://www.bysoft.se/sureshot/cavaj/">http://www.bysoft.se/sureshot/cavaj/</a></p>
+<p>JD-GUI: <a href="http://java.decompiler.free.fr/">http://java.decompiler.free.fr/</a></p>
+<p>Debido a que recientemente me econtré con la tesitura de decompilar una
+clase Java, y buscar un decompilador no me resulto fácil, aún conociendo
+sus nombres. Google me ...</p>
+                    <a class="btn btn-default btn-xs" href="./decompiladores-java.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./98.html">Tutorial Node.js</a></h2>
+                <div class="summary"><h1><span style="text-decoration: underline;">Enlaces de interes</span></h1>
+<p>Libro principiantes de Node.js -
+<a href="http://www.nodebeginner.org/index-es.html">http://www.nodebeginner.org/index-es.html</a></p>
+                    <a class="btn btn-default btn-xs" href="./98.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./tutorial-arpspoofing-con-dsniff.html">Tutorial ARPSpoofing con Dsniff</a></h2>
+                <div class="summary"><p>Primero hacemos que nuestro pc redireccione el trafico, para que la
+victima no se quede sin internet</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s">&quot;echo 1 &gt; /proc/sys/net/ipv4/ip_forward&quot;</span>
+
+<span class="n">Y</span> <span class="n">luego</span> <span class="n">hacemos</span> <span class="n">el</span> <span class="n">arpSoofing</span>
+</pre></div>
+
+
+<p><em>#arpspoof -t [gateway IP] [Victim IP] &amp; >/dev/null</em></p>
+<p><em>#arpspoof -t [victim IP] [gateway IP] &amp; >/dev/nul</em>l</p>
+<p>Y ...</p>
+                    <a class="btn btn-default btn-xs" href="./tutorial-arpspoofing-con-dsniff.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./remote-access-control-list.html">Remote Access Control List</a></h2>
+                <div class="summary"><p>Lista de aplicaciones para control remoto:</p>
+<p>Basadas en protocolo <a href="https://duckduckgo.com/?q=vnc">VNC</a>(Virtual Network Computing)</p>
+<ul>
+<li><a href="http://tightvnc.com/download-old.php">TightVNC</a>: existe versión para Windows y Linux. Licencia GPL2.
+    <a href="https://wiki.archlinux.org/index.php/Tightvnc">Tutoarch</a>. <em>provado y no lo supe hacer funcionar</em></li>
+<li><a href="http://sourceforge.net/apps/mediawiki/tigervnc/index.php?title=Main_Page">TigerVNC</a>: Despues de instalar TigerVNC en Windows, parar el
+    servicio en modo(Service-mode) y ejecutar el (user-mode), y en Linux ...</li></ul>
+                    <a class="btn btn-default btn-xs" href="./remote-access-control-list.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./wikis.html">Wikis</a></h2>
+                <div class="summary"><p>MediaWiki: la de la Wikipedia<br />
+DokuWiki: Wiki para grupos pequeños</p>
+<p>MoinMoinWiki: wiki en Python (extraido de cheatsheet mysql
+http://wiki.samat.org/CheatSheet/MySQL)</p>
+                    <a class="btn btn-default btn-xs" href="./wikis.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./lista-de-aplicaciones-basicas-archlinux-xfce.html">Lista de aplicaciones básicas ArchLinux + XFCE</a></h2>
+                <div class="summary"><p>Lista ArchLinux:</p>
+<p><a href="https://wiki.archlinux.org/index.php/Common_Applications">https://wiki.archlinux.org/index.php/Common_Applications</a></p>
+<p>Lista ArchForum Light and Fast(LnF):</p>
+<p>2010 -  <a href="https://bbs.archlinux.org/viewtopic.php?id=88515">https://bbs.archlinux.org/viewtopic.php?id=88515</a></p>
+<p>2011 - <a href="https://bbs.archlinux.org/viewtopic.php?id=111878">https://bbs.archlinux.org/viewtopic.php?id=111878</a></p>
+<p>2012 - <a href="https://bbs.archlinux.org/viewtopic.php?id=138281">https://bbs.archlinux.org/viewtopic.php?id=138281</a></p>
+<p>Lista de aplicaciones de XFCE:</p>
+<p><a href="http://wiki.xfce.org/recommendedapps">http://wiki.xfce ...</a></p>
+                    <a class="btn btn-default btn-xs" href="./lista-de-aplicaciones-basicas-archlinux-xfce.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./customize-xfce-menu.html">Customize XFCE Menu</a></h2>
+                <div class="summary"><p>Lo mejor es beber de la fuente,</p>
+<p><a href="http://wiki.xfce.org/howto/customize-menu">http://wiki.xfce.org/howto/customize-menu</a></p>
+<p>Lo que no me queda claro es como crear submenus.</p>
+                    <a class="btn btn-default btn-xs" href="./customize-xfce-menu.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./todo-in-my-archlinux.html">ToDo in my ArchLinux</a></h2>
+                <div class="summary"><div>
+
+**ToDo**
+
+</div>
+
+<div>
+
+</div>
+
+<ul>
+<li>~~Configurar red
+    correctamente: <a href="https://wiki.archlinux.org/index.php/Configuring_Network">https://wiki.archlinux.org/index.php/Configuring_Network</a>~~</li>
+<li>Instalar Servidor correo
+    Postfix: <a href="https://wiki.archlinux.org/index.php/Postfix">https://wiki.archlinux.org/index.php/Postfix</a></li>
+<li>y además instalar Web Mail client <a href="http://squirrelmail.org/">http://squirrelmail.org/</a>con
+    Apache</li>
+<li>~~Configurar
+    iptables: <a href="https://wiki.archlinux.org/index.php/Simple_stateful_firewall">https://wiki.archlinux.org/index.php/Simple_stateful_firewall</a>~~</li>
+<li>o hacer PC de router: <a href="https://wiki.archlinux.org/index.php/Router">https://wiki.archlinux ...</a></li></ul>
+                    <a class="btn btn-default btn-xs" href="./todo-in-my-archlinux.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="./index.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="./index.html">1</a></li>
+                    <li class="active"><a
+                            href="./index2.html">2</a></li>
+                    <li class=""><a
+                            href="./index3.html">3</a></li>
+                <li class="next"><a
+                        href="./index3.html">&raquo;</a></li>
+        </ul>
+			
+			
+			<hr>
+			<footer id="contentinfo" class="body footer">
+					<address id="about" class="vcard body">
+					Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+					which takes great advantage of <a href="http://python.org">Python</a>.
+					</address><!-- /#about -->
+			</footer><!-- /#contentinfo -->
+	</div>
+	
+	<script src="./theme/js/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="./theme/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

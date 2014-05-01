@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+          <title>RAMBORG's BLOG</title>
+        <meta charset="utf-8" />
+        
+
+		<link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="./theme/css/custom.css" type="text/css"/>
+        
+
+
+
+    <meta name="tags" contents="Customize" />
+
+</head>
+
+<body id="index" class="home">
+	
+		<div class="container">
+		  <div class="header">
+			<ul class="nav nav-pills pull-right">
+			  <!--
+			  <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#">About</a></li>
+			  <li><a href="#">Contact</a></li>
+			  -->
+                         <li><a href="./pages/about.html">
+                             Acerca de mi
+                          </a></li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                        <li >
+                            <a href="./category/applications.html">Applications</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-gnulinux.html">Applications, gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-programming.html">Applications, programming</a>
+                        </li>
+                        <li class="active">
+                            <a href="./category/gnulinux.html">Gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="./category/other.html">Other</a>
+                        </li>
+                        <li >
+                            <a href="./category/programming.html">Programming</a>
+                        </li>
+                        <li >
+                            <a href="./category/systems.html">Systems</a>
+                        </li>
+                        <li >
+                            <a href="./category/tips.html">Tips</a>
+                        </li>
+                        <li >
+                            <a href="./category/writing.html">Writing</a>
+                        </li>
+                </ul>
+              </li>
+              
+              <li><a href="./tags.html"><i class="fa fa-th-list"></i><span class="icon-label">Tags</span></a></li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              
+			</ul>
+			<h3 class="text-muted"><a href="./">RAMBORG's BLOG <strong></strong></a></h3>
+		  </div>
+			
+			
+			
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="./personalizar-y-anadir-color-a-la-consola-de-linux.html" rel="bookmark"
+         title="Permalink to Personalizar y añadir color a la consola de Linux">Personalizar y añadir color a la consola de Linux</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+	  <!--
+    <abbr class="published" title="2012-06-20T15:17:00">
+      mié 20 junio 2012
+    </abbr>
+    -->
+    <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-06-20T15:17:00"> mié 20 junio 2012</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="./author/ramborg.html"><i class="fa fa-user"></i> ramborg</a>
+
+
+
+<span class="label label-default side-tag">Tags</span>
+	<a href="./tag/customize.html">Customize</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Actualmente la mayoria de distribuciones de linux ya vienen con un poco
+de color, al menos el ls, pero a veces no.</p>
+<p>Para añadir color a la consola de linux es necesario:</p>
+<ul>
+<li>
+<p>Crear un archivo en la ruta del usuario de normbre ".bashrc",
+    también se puede encontrar una plantilla en /etc/skel/(al menos en
+    Arch).</p>
+</li>
+<li>
+<p>Añadir alias, por ejemplo:</p>
+</li>
+</ul>
+<blockquote>
+<p><em>        alias ls='ls --color=auto'</em></p>
+<p><em>        alias grep='grep --color=auto'</em></p>
+</blockquote>
+<ul>
+<li>
+<p>Tambien se puede personalizar el prompt de la consola, yo no lo
+    cambio, pero al final dejo un enlace donde explica como.</p>
+</li>
+<li>
+<p>A parte del color, para mi es importante el "autocomplete" de las
+    opciones de los comandos, para esto hay que tener descargado el
+    paquete "bash-completion" y añadir lo siguiente a nuestro .bashrc:</p>
+</li>
+</ul>
+<blockquote>
+<p><em> if [ -f /etc/bash_completion ]; then</em><br />
+<em>            . /etc/bash_completion</em><br />
+<em>      fi</em></p>
+</blockquote>
+<ul>
+<li>Por último, si se usa Vim como editor, para poner color a la
+    sintaxis, se hace creando un archivo ".vimrc" y escribiendo en el:</li>
+</ul>
+<blockquote>
+<p><em>syntax on</em></p>
+</blockquote>
+<p><strong>Nota</strong>: en mi caso el .bashrc para root no me lo reconocia. Existe el
+fichero /etc/bash.bashrc donde también se pueden poner estos cambios.</p>
+<p>Los articulos de donde he sacado la información son los siguientes:</p>
+<p>Personalización consola(mas completo, tiene lo del prompt):</p>
+<p><a href="http://jfibergran.wordpress.com/2009/04/10/personalizar-la-consola-de-linux-bashrc/">http://jfibergran.wordpress.com/2009/04/10/personalizar-la-consola-de-linux-bashrc/</a></p>
+<p>Vim con color:</p>
+<p><a href="http://rm-rf.es/activar-colores-en-vim/">http://rm-rf.es/activar-colores-en-vim/</a></p>
+  </div><!-- /.entry-content -->
+</section>
+			
+			
+			<hr>
+			<footer id="contentinfo" class="body footer">
+					<address id="about" class="vcard body">
+					Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+					which takes great advantage of <a href="http://python.org">Python</a>.
+					</address><!-- /#about -->
+			</footer><!-- /#contentinfo -->
+	</div>
+	
+	<script src="./theme/js/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="./theme/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

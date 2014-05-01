@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+          <title>RAMBORG's BLOG</title>
+        <meta charset="utf-8" />
+        
+
+		<link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="./theme/css/custom.css" type="text/css"/>
+        
+
+
+
+    <meta name="tags" contents="python" />
+    <meta name="tags" contents="script" />
+
+</head>
+
+<body id="index" class="home">
+	
+		<div class="container">
+		  <div class="header">
+			<ul class="nav nav-pills pull-right">
+			  <!--
+			  <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#">About</a></li>
+			  <li><a href="#">Contact</a></li>
+			  -->
+                         <li><a href="./pages/about.html">
+                             Acerca de mi
+                          </a></li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                        <li >
+                            <a href="./category/applications.html">Applications</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-gnulinux.html">Applications, gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-programming.html">Applications, programming</a>
+                        </li>
+                        <li >
+                            <a href="./category/gnulinux.html">Gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="./category/other.html">Other</a>
+                        </li>
+                        <li class="active">
+                            <a href="./category/programming.html">Programming</a>
+                        </li>
+                        <li >
+                            <a href="./category/systems.html">Systems</a>
+                        </li>
+                        <li >
+                            <a href="./category/tips.html">Tips</a>
+                        </li>
+                        <li >
+                            <a href="./category/writing.html">Writing</a>
+                        </li>
+                </ul>
+              </li>
+              
+              <li><a href="./tags.html"><i class="fa fa-th-list"></i><span class="icon-label">Tags</span></a></li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              
+			</ul>
+			<h3 class="text-muted"><a href="./">RAMBORG's BLOG <strong></strong></a></h3>
+		  </div>
+			
+			
+			
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="./script-python-create-xml-file-from-csv-file.html" rel="bookmark"
+         title="Permalink to Script Python create xml file from csv file">Script Python create xml file from csv file</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+	  <!--
+    <abbr class="published" title="2013-04-19T11:05:00">
+      vie 19 abril 2013
+    </abbr>
+    -->
+    <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-04-19T11:05:00"> vie 19 abril 2013</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="./author/ramborg.html"><i class="fa fa-user"></i> ramborg</a>
+
+
+
+<span class="label label-default side-tag">Tags</span>
+	<a href="./tag/python.html">python</a>
+        /
+	<a href="./tag/script.html">script</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>It script create a custom xml file from a csv file. The format of the
+csv is like <a href="http://blog.ramsys.es/ramborg/wp-content/uploads/2013/04/Distribuidoras.csv">this file</a>.</p>
+<p>[code language="python"]<br />
+import csv<br />
+#import sys</p>
+<p>from xml.etree import ElementTree<br />
+from xml.dom import minidom</p>
+<p>csvFileName = "Distribuidoras.csv"<br />
+xmlFileName = "distribuidoras.xml"</p>
+<p>def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):<br />
+csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)<br />
+for row in csv_reader:<br />
+yield [unicode(cell, 'utf-8') for cell in row]</p>
+<p>with open(csvFileName, 'rU') as csvFile:<br />
+#reader = csv.reader(csvFile, delimiter=';')<br />
+reader = unicode_csv_reader(csvFile, delimiter=';')</p>
+<p>comercializadoras_tag = ElementTree.Element('distribuidoras')<br />
+for row in reader:<br />
+#print row</p>
+<p>if(row[0]!='' or row[1]!='' or row[2]!='' or row[3]!='' or row[4] or
+row[5]!='' or row[6]!=''):<br />
+attrs = {'name': row[0],<br />
+'tel': row[1],<br />
+'cif': row[2],<br />
+'direccion': row[3],<br />
+'codigo': row[4],<br />
+'division': row[5],<br />
+'zona': row[6]<br />
+}<br />
+#print attrs</p>
+<p>ElementTree.SubElement(comercializadoras_tag, 'distribuidora',
+attrib=attrs)</p>
+<p>resultXML =
+minidom.parseString(ElementTree.tostring(comercializadoras_tag)).toprettyxml()<br />
+resultXML_utf8 = resultXML.encode('UTF-8')<br />
+#print resultXML_utf8</p>
+<p>with open(xmlFileName, 'w+') as xmlFile:<br />
+xmlFile.write(resultXML_utf8)</p>
+<p>[/code]</p>
+<p>I add a gist <a href="https://gist.github.com/ramsys/5419656">snippet link</a>.</p>
+  </div><!-- /.entry-content -->
+</section>
+			
+			
+			<hr>
+			<footer id="contentinfo" class="body footer">
+					<address id="about" class="vcard body">
+					Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+					which takes great advantage of <a href="http://python.org">Python</a>.
+					</address><!-- /#about -->
+			</footer><!-- /#contentinfo -->
+	</div>
+	
+	<script src="./theme/js/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="./theme/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+          <title>RAMBORG's BLOG</title>
+        <meta charset="utf-8" />
+        
+
+		<link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="./theme/css/custom.css" type="text/css"/>
+        
+
+
+
+    <meta name="tags" contents="network map" />
+    <meta name="tags" contents="network topology map" />
+
+</head>
+
+<body id="index" class="home">
+	
+		<div class="container">
+		  <div class="header">
+			<ul class="nav nav-pills pull-right">
+			  <!--
+			  <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#">About</a></li>
+			  <li><a href="#">Contact</a></li>
+			  -->
+                         <li><a href="./pages/about.html">
+                             Acerca de mi
+                          </a></li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                        <li >
+                            <a href="./category/applications.html">Applications</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-gnulinux.html">Applications, gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-programming.html">Applications, programming</a>
+                        </li>
+                        <li >
+                            <a href="./category/gnulinux.html">Gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="./category/other.html">Other</a>
+                        </li>
+                        <li >
+                            <a href="./category/programming.html">Programming</a>
+                        </li>
+                        <li class="active">
+                            <a href="./category/systems.html">Systems</a>
+                        </li>
+                        <li >
+                            <a href="./category/tips.html">Tips</a>
+                        </li>
+                        <li >
+                            <a href="./category/writing.html">Writing</a>
+                        </li>
+                </ul>
+              </li>
+              
+              <li><a href="./tags.html"><i class="fa fa-th-list"></i><span class="icon-label">Tags</span></a></li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              
+			</ul>
+			<h3 class="text-muted"><a href="./">RAMBORG's BLOG <strong></strong></a></h3>
+		  </div>
+			
+			
+			
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="./network-maphost-discovery.html" rel="bookmark"
+         title="Permalink to Network map/Host Discovery">Network map/Host Discovery</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+	  <!--
+    <abbr class="published" title="2013-06-21T11:50:00">
+      vie 21 junio 2013
+    </abbr>
+    -->
+    <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-06-21T11:50:00"> vie 21 junio 2013</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="./author/ramborg.html"><i class="fa fa-user"></i> ramborg</a>
+
+
+
+<span class="label label-default side-tag">Tags</span>
+	<a href="./tag/network-map.html">network map</a>
+        /
+	<a href="./tag/network-topology-map.html">network topology map</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Network mapping for discover hosts and topology in a LAN. Is the
+previous step for tapping in the web or attack a host.</p>
+<p>There are many tools fot this. I remember two good tools in my times,
+<a href="http://www.amtsoft.com/iris/index.htm">Iris</a>, <a href="http://www.amtsoft.com/retina/index.htm">Retina,</a> not free and I don't know how are good now. But
+with NMAP you can do this.</p>
+<p>For view the hosts in company lan:<br />
+<code>nmap -sL 10.0.0.0/8</code><br />
+Too much hosts, I try the next command for less hosts. This limits to
+the subhost 10.15.255.255(1+2+4+8) :<br />
+<code>nmap -sL 10.0.0.0/12</code><br />
+Or in a personal LAN we could do:<br />
+<code>nmap -sL 192.168.1.0/24</code></p>
+<p>More options for host detection explained in nmap.org:<br />
+<a href="http://nmap.org/book/man-host-discovery.html">http://nmap.org/book/man-host-discovery.html</a></p>
+<p>References:</p>
+<ul>
+<li><a href="http://nmap.org/book/man-host-discovery.html">NMap.org Man Host Dicovery</a></li>
+<li><a href="http://answers.yahoo.com/question/index?qid=20080529005535AAYjvo0">Yahoo answer about 10.0.0.0/8</a></li>
+<li><a href="http://windows.microsoft.com/en-us/windows7/why-are-computers-missing-from-the-network-map">Simple explanation Network map</a></li>
+<li><a href="http://www.nonags.com/nonags/lan.html">Free tools LAN/Network map</a></li>
+<li><a href="http://nmap.org/book/zenmap-topology.html">http://nmap.org/book/zenmap-topology.html</a></li>
+</ul>
+  </div><!-- /.entry-content -->
+</section>
+			
+			
+			<hr>
+			<footer id="contentinfo" class="body footer">
+					<address id="about" class="vcard body">
+					Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+					which takes great advantage of <a href="http://python.org">Python</a>.
+					</address><!-- /#about -->
+			</footer><!-- /#contentinfo -->
+	</div>
+	
+	<script src="./theme/js/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="./theme/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

