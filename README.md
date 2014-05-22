@@ -5,7 +5,7 @@ Just another Pelican blog
 
 ##How to build
 
-pelican content -o output -s pelicanconf.py
+	pelican content -o output -s pelicanconf.py
 
 ##Theme
 
