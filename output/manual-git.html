@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <title>RAMBORG's BLOG - Tags</title>
+          <title>RAMBORG's BLOG</title>
         <meta charset="utf-8" />
         
 
 		<link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
 		<link rel="stylesheet" href="./theme/css/custom.css" type="text/css"/>
         
+
+
+
+    <meta name="tags" contents="Programming" />
+
 </head>
 
 <body id="index" class="home">
@@ -39,7 +44,7 @@
                         <li >
                             <a href="./category/gnulinux.html">Gnu/linux</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="./category/misc.html">Misc</a>
                         </li>
                         <li >
@@ -69,32 +74,65 @@
 			
 			
 			
-    <h1>Tags for RAMBORG's BLOG</h1>        <li><a href="./tag/administration.html">Administration</a> (3)</li>
-        <li><a href="./tag/applications.html">Applications</a> (4)</li>
-        <li><a href="./tag/autoayuda.html">autoayuda</a> (2)</li>
-        <li><a href="./tag/cracking.html">Cracking</a> (2)</li>
-        <li><a href="./tag/customize.html">Customize</a> (4)</li>
-        <li><a href="./tag/hacking.html">Hacking</a> (3)</li>
-        <li><a href="./tag/java.html">Java</a> (1)</li>
-        <li><a href="./tag/links-web.html">links web</a> (1)</li>
-        <li><a href="./tag/misc.html">Misc</a> (1)</li>
-        <li><a href="./tag/network-map.html">network map</a> (1)</li>
-        <li><a href="./tag/network-topology-map.html">network topology map</a> (1)</li>
-        <li><a href="./tag/poesia.html">poesía</a> (3)</li>
-        <li><a href="./tag/programming.html">Programming</a> (2)</li>
-        <li><a href="./tag/python.html">python</a> (2)</li>
-        <li><a href="./tag/republica.html">republica</a> (1)</li>
-        <li><a href="./tag/resources.html">resources</a> (1)</li>
-        <li><a href="./tag/rudyard-kipling.html">rudyard kipling</a> (2)</li>
-        <li><a href="./tag/samsung.html">Samsung</a> (1)</li>
-        <li><a href="./tag/script.html">script</a> (2)</li>
-        <li><a href="./tag/server.html">Server</a> (1)</li>
-        <li><a href="./tag/todo.html">ToDo</a> (1)</li>
-        <li><a href="./tag/traduccion.html">traducción</a> (1)</li>
-        <li><a href="./tag/trick.html">Trick</a> (1)</li>
-        <li><a href="./tag/web-developing.html">web developing</a> (1)</li>
-        <li><a href="./tag/wifi.html">wifi</a> (1)</li>
-        <li><a href="./tag/wiki-attacks.html">wiki attacks</a> (1)</li>
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="./manual-git.html" rel="bookmark"
+         title="Permalink to Manual de guerrilla Git">Manual de guerrilla Git</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+	  <!--
+    <abbr class="published" title="2014-05-23T20:10:00">
+      vie 23 mayo 2014
+    </abbr>
+    -->
+    <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-05-23T20:10:00"> vie 23 mayo 2014</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="./author/ramborg.html"><i class="fa fa-user"></i> ramborg</a>
+
+
+
+<span class="label label-default side-tag">Tags</span>
+	<a href="./tag/programming.html">Programming</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Después de estar un año peleandome con Git, he decidido crear mi propio manual/tutorial para el uso que hago el día a día.</p>
+<p>Allá vamos! / Here we go!</p>
+<h2>Preparar repositorio local</h2>
+<ul>
+<li>Clonar repositorio en local
+    git clone $URL</li>
+<li>Crear repositorio desde código existente
+    TODO</li>
+<li>Asociar varios repositorios remotos a una carpeta
+    TODO (for github+openshift p.e.)</li>
+</ul>
+<h2>Revert / Descartar cambios</h2>
+<ul>
+<li>Recuperar archivos de ultima versión y perder cambios locales
+    git reset --hard</li>
+<li>Borrar todos los ficheros locales que no existen en el repositorio remoto
+    git clean -fd</li>
+<li>Recuperar un solo archivo y descartar cambios locales
+    git checkout -- filename</li>
+</ul>
+<h2>Referencias</h2>
+<ul>
+<li>Revert [http://stackoverflow.com/questions/5807137/git-how-to-revert-uncommitted-changes-including-files-and-folders][http://www.norbauer.com/rails-consulting/notes/git-revert-reset-a-single-file.html]</li>
+</ul>
+  </div><!-- /.entry-content -->
+</section>
 			
 			
 			<hr>
